@@ -318,7 +318,7 @@ class DeepseekAPI(DeepseekBase):
                 line = data.decode().strip().replace("data: ", "")
                 if line:
                     line = json.loads(line)
-                    if line.get("payload", None) is None:
+                    if line["choices"][0]["delta"]["content"] == None:
                         line["choices"][0]["delta"]["content"] = ""
                     yield line
 
@@ -463,7 +463,7 @@ class SyncDeepseekAPI(DeepseekBase):
                     line = line.strip().replace("data: ", "")
                     line: dict = json.loads(line)
                     if (
-                        line.get("payload", None) is None
+                        line["choices"][0]["delta"]["content"] == None
                     ):  # Hack to fix initial empty payload
                         line["choices"][0]["delta"]["content"] = ""
                     yield line
