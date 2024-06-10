@@ -5,7 +5,7 @@ Unofficial API Wrapper for Deepseek (chat.deepseek.com) in Python. This is a rev
 ## Installation
 
 ```bash
-pip install git+https://github.com/rabilrbl/deepseek-api.git
+pip install git+https://github.com/kjh948/deepseek-api.git
 ```
 
 ## Usage
